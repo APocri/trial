@@ -12,49 +12,37 @@ listb = [x for x in lista if x %2 != 0]
 
 
 def bubbleSort(list0):
-
-    #冒泡
-
-    list0.insert(i,list0.pop(j)) for i in range(len(list0)) for j in range(i) if list0[i] < list0[j]
-
-    #list0.insert(i,list0.pop(j))
-
-    #for each in list0.pop
-
-	pass
+    #冒泡,小到大
+    length=len(list0)
+    while length>0:
+        for i in range(length-1):
+            if list0[i]>list0[i+1]:
+                list0[i+1] = list0[i+1] + list0[i]
+                list0[i] = list0[i+1] - list0[i]
+                list0[i+1] = list0[i+1] - list0[i]
+        length -= 1
+    return list0
 
 
     
 
 def insertionSort(list0):
-
 #插入
-
     pass
 
 
 def mergeSortRescur(list0):
-
     #小到大并归排序,递归
-
 	if len(list0) <4:
-
 		return mergeFuncCurrying(list0[:1],list0[1:])
-
 	else:
-
 		return mergeFuncCurrying(mergeSortRescur(list0[:int(len(list0)/2)]),mergeSortRescur(list0[int(len(list0)/2):]))
 
         
 
 def mergeSortIter(list0):
-
     #小到大并归排序,迭代
-
     if len(list0) <4:
-
-        
-
     pass
 
 def mergeSortCurrying(list0):
